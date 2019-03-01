@@ -1,0 +1,104 @@
+
+#fondox{
+	background: #d6d3d6;
+        background: -moz-linear-gradient(left, #d6d3d6 0%, #a3a3a3 47%, #696969 100%);
+        background: -webkit-gradient(left top, right top, color-stop(0%, #d6d3d6), color-stop(47%, #a3a3a3), color-stop(100%, #696969));
+        background: -webkit-linear-gradient(left, #d6d3d6 0%, #a3a3a3 47%, #696969 100%);
+        background: -o-linear-gradient(left, #d6d3d6 0%, #a3a3a3 47%, #696969 100%);
+        background: -ms-linear-gradient(left, #d6d3d6 0%, #a3a3a3 47%, #696969 100%);
+        background: linear-gradient(to right, #d6d3d6 0%, #a3a3a3 47%, #696969 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6d3d6', endColorstr='#696969', GradientType=1 );
+}
+#inp{
+    
+	color:transparent;
+	width: 150px;
+	height: 30px;
+
+}
+#foced{
+    color:transparent;
+	width: 150px;
+	height: 30px;
+}
+#vol{
+float: left;	
+}
+#sal{
+float: right;
+}
+
+h1{
+    color: white;
+}
+
+label{
+    color: white;
+    margin-top: 10px; 
+}
+
+input{
+    margin-top: 10px; 
+}
+
+#nuevo{
+	float: left;
+	margin-top: 50px;	
+	margin-left: 5px;
+}
+#bot{
+	margin-top: 10px;
+}
+#padre{
+	background-color: transparent;
+  	padding: 0 1rem;
+  	margin: 1rem;
+}
+#insertar{
+	margin-top: 8%;
+	width: 300px;
+	margin-left: auto;
+  	margin-right: auto;
+	text-align: center;
+    padding: 20px;
+    background: transparent;
+    border-radius: 20px 20px 20px 20px;
+    border: 1px solid green;
+    
+}
+#quitar{
+	color:transparent;
+	width: 150px;
+	height: 30px;
+}
+
+
+@media screen and (max-width:1200px){
+    
+    h1{
+    color: black;
+}
+    
+    label{
+    color: black;
+    margin-top: 10px; 
+    }
+    
+	table{
+		width: 80%;
+	}
+	   #insertar{
+  
+ 
+    background: white;
+    margin-top: 80px;
+    border-radius: 20px 20px 20px 20px;
+    border: 1px solid green;
+    max-width: 80%;
+} 
+}
+#vol{
+	position: absolute;
+	top: 5px;
+	left: 5px;
+}
