@@ -16,6 +16,10 @@
 	<title>PetApp</title>
 </head>
 <body>
+        <%
+        HttpSession ht = request.getSession();
+        String dat2=(String)ht.getAttribute("nomA");
+        %>
     <header id="encabezado">
     <form action="../../Login/inicio.jsp">
     <input type="submit" name="cerrar" value="Cerrar Sesion" class="btn btn-light" id="sal">
@@ -130,7 +134,7 @@
     </div>
   </form>
 
-<form action="../Mascota/Consultar_Mascota.jsp">
+<form action="../Veterinaria/Consultar_Veterinaria.jsp">
 <div class="col-sm-4 col-xs-12">
       <div class="panel panel-default text-center" id="divciudadano">
         <div class="panel-heading" id="verde">

@@ -18,11 +18,13 @@ public class Funcionario {
         
         try {
         
-        ps=cnn.prepareStatement("insert into funcionario values(?,?,?,?)");
+        ps=cnn.prepareStatement("insert into funcionario values(?,?,?,?,?,?)");
         ps.setString(1, FGS.getCed());
         ps.setString(2, FGS.getTel());
         ps.setString(3, FGS.getNom());
         ps.setString(4, FGS.getCor());
+        ps.setString(5, FGS.getCar());
+        ps.setString(6, FGS.getDep());
         ps.executeUpdate();
         
             JOptionPane.showMessageDialog(null, "Datos Guardados");
@@ -42,7 +44,7 @@ public class Funcionario {
             res=ps.executeQuery();
             while (res.next()) {
                 
-                GSFuncionario CF = new GSFuncionario(res.getString(1),res.getString(2),res.getString(3),res.getString(4));
+                GSFuncionario CF = new GSFuncionario(res.getString(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getString(6));
                 R.add(CF);
                 
                 
@@ -66,5 +68,16 @@ public class Funcionario {
         } catch (Exception e) {
         }
         return R;
+    }
+       
+    public int Actualizar(GSFuncionario AF){
+        int x=0;
+        try {
+            ps=cnn.prepareStatement("call Modificar_Funcionario('"+AF.getCed()+"','"+AF.getTel()+"','"+AF.getNom()+"','"+AF.getCor()+"','"+AF.getDep()+"')");
+            x=ps.executeUpdate();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        return x;
     }
 }

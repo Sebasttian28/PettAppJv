@@ -21,6 +21,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -47,6 +48,10 @@ public class ServletFuncionario extends HttpServlet {
             if(request.getParameter("botonfunci")!=null){
             this.IngresarFuncionario(request, response);
             }
+            
+            if(request.getParameter("BTN")!=null){
+            this.ModificarFuncionario(request, response);
+            }
     }
         
     protected void IngresarFuncionario(HttpServletRequest request, HttpServletResponse response)
@@ -54,16 +59,18 @@ public class ServletFuncionario extends HttpServlet {
     response.setContentType("text/html;charset=UTF-8");
     PrintWriter out = response.getWriter();
 
-        String ced,tel,nom,cor;
+        String ced,tel,nom,cor,dep,car;
         ced=request.getParameter("cedula");
         tel=request.getParameter("telefono");
         nom=request.getParameter("nombre");
         cor=request.getParameter("correo");
+        dep=request.getParameter("dependencia");
+        car="Funcionario";
          Part foto=request.getPart("foto");
           String nomfoto=foto.getSubmittedFileName();
           String nombre=ced+nom;
           
-          String Url="C:\\Users\\Edwin Abril\\Documents\\NetBeansProjects\\PettAppJ\\web\\Uploads\\FotosUsuarios/"+nombre;
+          String Url="C:\\Users\\crist_000\\Documents\\NetBeansProjects\\PettAppJ\\web\\Uploads\\FotosUsuarios/"+nombre;
           
           String Url2=nombre;
           
@@ -83,10 +90,38 @@ public class ServletFuncionario extends HttpServlet {
         GSUsuario con2=new GSUsuario(ced,cla,rol,Url2);
         Usuario in2=new Usuario();
         in2.Ingresar_ciud(con2);
-        GSFuncionario con=new GSFuncionario(ced,tel,nom,cor);
+        GSFuncionario con=new GSFuncionario(ced,tel,nom,cor,car,dep);
         Funcionario in=new Funcionario();
         in.Insertar(con);
         response.sendRedirect("Administrador/Funcionario/Ingresar_Funcionarios.jsp");
+        
+    }
+    
+    protected void ModificarFuncionario(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
+    response.setContentType("text/html;charset=UTF-8");
+    PrintWriter out = response.getWriter();
+
+        int x;
+        String ced,tel,nom,cor,dep;
+        ced=request.getParameter("ced");
+        tel=request.getParameter("tel");
+        nom=request.getParameter("nom");
+        cor=request.getParameter("cor");
+        dep=request.getParameter("dep");
+        
+        GSFuncionario con=new GSFuncionario(ced,tel,nom,cor,dep);
+        Funcionario in=new Funcionario();
+        x=in.Actualizar(con);
+        
+        if (x>0) {
+            JOptionPane.showMessageDialog(null, "Datos Actualizados");
+        }
+        
+        else{
+            JOptionPane.showMessageDialog(null, "Datos no Actualizados");
+        }
+        response.sendRedirect("Administrador/Funcionario/Consultar_Funcionarios.jsp");
         
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

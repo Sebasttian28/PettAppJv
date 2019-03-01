@@ -17,7 +17,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../../Administrador/Adopciones/CSS/Estilo.css">
+    <link rel="stylesheet" href="Adopciones/Administrador1/CSS/Estilo.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <body id="fondox">

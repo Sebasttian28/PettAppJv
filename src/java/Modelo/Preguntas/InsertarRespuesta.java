@@ -48,12 +48,8 @@ public class InsertarRespuesta {
         int Valor=0;
         try{
         ps=cnn.prepareStatement("call preguntafin(?,?)");
-        JOptionPane.showMessageDialog(null, ing.getCed());
         ps.setString(1,ing.getCed());
         ps.setInt(2,ing.getRe1());
-        JOptionPane.showMessageDialog(null, Valor);
-         Valor = ps.executeUpdate();
-        JOptionPane.showMessageDialog(null, Valor);
             JOptionPane.showMessageDialog(null,"Exito");
         }
         catch(Exception e){

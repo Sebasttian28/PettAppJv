@@ -51,15 +51,15 @@ public class Adopcion {
     }
      public void Guardar_Adoptado(GSAdoptado ing){
         try{
-            ps=cnn.prepareStatement("insert into adoptados (nombre_animal,tipo_animal,edad_animal,raza_animal,tamano,genero,color,foto) values (?,?,?,?,?,?,?,?)");
+            ps=cnn.prepareStatement("insert into adoptados (nombre_animal,tipo_animal,edad_animal,raza_animal,foto,tamano,genero,color) values (?,?,?,?,?,?,?,?)");
             ps.setString(1,ing.getNom());
             ps.setString(2,ing.getTip());
             ps.setString(3,ing.getEda());
             ps.setString(4,ing.getRaz());
-            ps.setString(5,ing.getTam());
-            ps.setString(6,ing.getGen());
-            ps.setString(7,ing.getCol());
-            ps.setString(8,ing.getFot());
+            ps.setString(5,ing.getFot());
+            ps.setString(6,ing.getTam());
+            ps.setString(7,ing.getGen());
+            ps.setString(8,ing.getCol());
             ps.executeUpdate();
         }
         catch(Exception e){

@@ -9,6 +9,14 @@ public class GSFuncionario {
     private String car;
     private String dep;
 
+    public GSFuncionario(String ced, String tel, String nom, String cor, String dep) {
+        this.ced = ced;
+        this.tel = tel;
+        this.nom = nom;
+        this.cor = cor;
+        this.dep = dep;
+    }
+
     public GSFuncionario(String ced, String tel, String nom, String cor, String car, String dep) {
         this.ced = ced;
         this.tel = tel;

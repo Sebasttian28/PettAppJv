@@ -111,20 +111,41 @@
 </div>    
 	
     <h3 class="display-4" style="margin-top: 70px;">Animal</h3>
-    	        <%
-                ArrayList<GSAnimalAdmin> dat = new ArrayList<>();
-                Animal co = new Animal();
-                dat=co.Consultar();
-                GSAnimalAdmin cgsc2= new GSAnimalAdmin();
-                for (int i2 = 0; i2 < dat.size() ; i2++) {
-                        cgsc2=dat.get(i2);
+    
+        <input type="text" placeholder="Busqueda por Raza" name="xraza" class="razax">
+    <select name="xgenero">
+      <option value="">Genero</option>
+      <option value="Macho">Macho</option>
+      <option value="Hembra">Hembra</option>
+    </select>
+    <select name="xtamano">
+      <option value="">Tamaño</option>
+      <option value="Grande">Grande</option>
+      <option value="Mediano">Mediano</option>
+      <option value="Pequeño">Pequeño</option>
+    </select>
+    <input type="submit" name="buscar">
+    <div class="tabla">
+    
+        <%
+        String rf=request.getParameter("raza");
+        %>
+    
+     <%
+                ArrayList<GSAnimalAdmin> d = new ArrayList<>();
+                Animal consu = new Animal();
+                d=consu.Consultar();
+                GSAnimalAdmin gs= new GSAnimalAdmin();
+                for (int l = 0; l < d.size() ; l++) {
+                        gs=d.get(l);
+                        
                 %>
                 <div id="centro">
                 <div class="caja1">
                     <table class="table">
                     <tr>
                     <thead class='thead-dark'>
-                    <th><%=cgsc2.getNom()%></th>
+                    <th><%=gs.getNom()%></th>
                     </thead>
                     </tr>
                     </table>
@@ -132,62 +153,61 @@
                 
                 <div class="caja2">
                     <table class="table">
-                        <%    
-                        ArrayList<GSCiudadanoAdmin> dares = new ArrayList<>();
-                        Ciudadano cores = new Ciudadano();
-                        dares=cores.Consultar1(dat2);
-                        GSCiudadanoAdmin cgscres= new GSCiudadanoAdmin();
-                
-                        for (int ire = 0; ire < dares.size() ; ire++) {
-                        cgscres=dares.get(ire);%>
                         
-                
                         <tr>
-                        <th><img src="../../Uploads/FotosAnimal/<%=cgsc2.getTam()%>" width="100" height="100"></th>
+                        <th><img src="../../Uploads/FotosAnimal/<%=gs.getFot()%>" width="100" height="100"></th>
                         </tr>
                         <tr>
                         <th>Codigo</th>
-                        <th><%=cgsc2.getCod()%></th>
+                        <th><%=gs.getCod()%></th>
                         </tr>
                         <tr>
                         <th>Nombre</th>
-                        <th><%=cgsc2.getNom()%></th>
+                        <th><%=gs.getNom()%></th>
                         </tr>
                         <tr>
                         <th>Tipo</th>            
-                        <th><%=cgsc2.getTip()%></th>
+                        <th><%=gs.getTip()%></th>
                         </tr>
                         <tr>
                         <th>Edad</th>
-                        <th><%=cgsc2.getEda()%></th>
+                        <th><%=gs.getEda()%></th>
                         </tr>
                         <tr>
                         <th>Raza</th>
-                        <th><%=cgsc2.getRaz()%></th>
+                        <th><%=gs.getRaz()%></th>
                         </tr>
                         <tr>
 
                         <th>Tamaño</th>
-                        <th><%=cgsc2.getGen()%></th>
+                        <th><%=gs.getTam()%></th>
                         </tr>
                         <th>Genero</th>
-                        <th><%=cgsc2.getCol()%></th>
+                        <th><%=gs.getGen()%></th>
                         <tr>
                         <th>Color</th>
-                        <th><%=cgsc2.getFot()%></th>
+                        <th><%=gs.getCol()%></th>
                         </tr> 
-                        
                         
                         <form method='POST' action='../../ServletRespuesta'>
                         <input type='submit' name='readop' heigth='100px' width='100px' src='Imagenes/adoptame.png' class='img-responsive slideanim' id='logoadopta'  >
                         <h1>Adoptame</h1>
-                        <input type='hidden' name='code' value='<%=cgsc2.getCod()%>'>
-                        <input type='hidden' name='cedu' value=' <%=cgscres.getCed()%>'>
-                        <input type='text' name='dat1' value='<%=dat2%>'>
+                        <input type='hidden' name='code' value='<%=gs.getCod()%>'>
+                        
+                        <%    
+                        ArrayList<GSCiudadanoAdmin> dares22 = new ArrayList<>();
+                        Ciudadano cores22 = new Ciudadano();
+                        dares22=cores22.Consultar1(dat2);
+                        GSCiudadanoAdmin cgscres22= new GSCiudadanoAdmin();
+                
+                        for (int ire22 = 0; ire22 < dares22.size() ; ire22++) {
+                        cgscres22=dares22.get(ire22);%>
+                        <input type='hidden' name='cedu' value=' <%=cgscres22.getCed()%>'>
+                        <input type='hidden' name='dat1' value='<%=dat2%>'>
                         <%
                         ArrayList<GSRespuestaFin> datfin1 = new ArrayList<>();
                         Respu cofin1 = new Respu();
-                        datfin1=cofin1.Consultar(cgscres.getCed());
+                        datfin1=cofin1.Consultar(cgscres22.getCed());
                         GSRespuestaFin cgscfin1= new GSRespuestaFin();
                         for (int ifin1 = 0; ifin1 < datfin1.size() ; ifin1++) {
                                 cgscfin1=datfin1.get(ifin1);
@@ -202,7 +222,16 @@
                 </table>
             </div>
             </div>
-            <%}}}%>
+                        <%}%>
+            <%}}%>    
+        
+        
+    </div>
+        
+    
+    
+    	       
+            
     </body>
 </html>
 

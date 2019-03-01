@@ -116,6 +116,9 @@
         <form action="Menu/Ciudadano.jsp">
             <input type="submit" name="volver" value="Volver" class="btn btn-outline-dark" id="vol">
   	</form>
+         <form action="IngresarMascota_Adm.jsp">
+            <input type="submit" name="insertar" value="Insertar" class="btn btn-outline-dark" id="vol">
+  	</form>
             <h3 class="display-4" style="margin-top: 50px;">Mascotas</h3>
     	        <%
                 ArrayList<GSMascotaAdmin> res = new ArrayList<>();

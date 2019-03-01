@@ -4,6 +4,8 @@
     Author     : KnokinGm
 --%>
 
+<%@page import="Modelo.Usuario.Usuario"%>
+<%@page import="Modelo.Usuario.GSUsuario"%>
 <%@page import="Modelo.Administrador.Funcionario.Funcionario"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Modelo.Administrador.Funcionario.GSFuncionario"%>
@@ -32,13 +34,19 @@
   	</form>
     <h3 class="display-4">Funcionarios</h3>
     	        <%
+                ArrayList<GSUsuario> datU = new ArrayList<>();
+                Usuario coU = new Usuario();
+                datU=coU.ConsultarF();
+                GSUsuario cgscU= new GSUsuario();
                 ArrayList<GSFuncionario> dat = new ArrayList<>();
                 Funcionario co = new Funcionario();
                 dat=co.Consultar();
                 GSFuncionario cgsc= new GSFuncionario();
                 for (int i = 0; i < dat.size() ; i++) {
                         cgsc=dat.get(i);
+                        cgscU=datU.get(i);
                 %>
+                
             
                 <div class="caja1">
                     <table class="table">
@@ -53,36 +61,53 @@
                 <div class="caja2">
                     <table class="table">
                         <tr>
-                        <th>Nombre</th>
+                        <th colspan='3'><img src="../../Uploads/FotosUsuarios/<%=cgscU.getFot()%>" width="200" height="200"></th>
+                        </tr>
+                        <tr>
+                        <th colspan='2'>Nombre</th>
                         <th><%=cgsc.getNom()%></th>
                         </tr>
                         <tr>
-                        <th>Cedula</th>
+                        <th colspan='2'>Cedula</th>
                         <th><%=cgsc.getCed()%></th>
                         </tr>
                         <tr>
-                        <th>Telefono</th>            
+                        <th colspan='2'>Telefono</th>            
                         <th><%=cgsc.getTel()%></th>
                         </tr>
                         <tr>
-                        <th>Correo</th>
+                        <th colspan='2'>Correo</th>
                         <th><%=cgsc.getCor()%></th>
                         </tr>
                         <tr>
-                    
-                <form method='POST' action=''>
-                    <input type='hidden' name='cod' value=''>
-                    <th><input type='submit' name='modificar' value='Modificar' class='btn btn-info' ></th>
+                        <th colspan='2'>Cargo</th>
+                        <th><%=cgsc.getCar()%></th>
+                        </tr>
+                        <tr>
+                        <th colspan='2'>Dependencia</th>
+                        <th><%=cgsc.getDep()%></th>
+                        </tr>
+                        <tr>
+                <th>    
+                <form method='POST' action='Modificar_Eliminar_Funcionario.jsp'>
+                    <input type='hidden' name='cod' value='<%=cgsc.getCed()%>'>
+                    <input type='submit' name='modificar1' value='Datos' class='btn btn-info' >
                 </form>
-            
+                </th>
+                <th>
+                <form method='POST' action='Modificar_Perfil.jsp'>
+                    <input type="hidden" name="cod" value="<%=cgsc.getCed()%>">
+                    <input type='submit' name='modificar2' value='Perfil' class='btn btn-info'>
+                </form>
+                </th>
                 <form method='POST' action=''>
                     <input type='hidden' name='codfu' value=''>
                     <th><input type='submit' name='eliminar' value='Eliminar' class='btn btn-danger'></th>
                 </form>
                 
-                
                 </table>
             </div>
+                        
             <%}%>
     </body>
 </html>

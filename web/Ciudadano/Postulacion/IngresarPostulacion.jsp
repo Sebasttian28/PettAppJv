@@ -79,8 +79,8 @@
         
            
 
-   <input type="text" name="coda" value="<%=ani%>" class="form-control">
-   <input type="text" name="rpuntaje" value="<%=res%>" class="form-control">
+   <input type="hidden" name="coda" value="<%=ani%>" class="form-control">
+   <input type="hidden" name="rpuntaje" value="<%=res%>" class="form-control">
    <%
    ArrayList<GSCiudadanoAdmin> dares = new ArrayList<>();
             Ciudadano cores = new Ciudadano();
@@ -90,7 +90,7 @@
             for (int ire = 0; ire < dares.size() ; ire++) {
             cgscres=dares.get(ire);
    %>
-   <input type="text" name="cedula" value="<%=cgscres.getCed()%>" class="form-control">
+   <input type="hidden" name="cedula" value="<%=cgscres.getCed()%>" class="form-control">
    <%}%>   
     <div class="form-group" id="bot">
       <input type="submit" name="ingpostu" value="Realizar Postulacion1" class="btn btn-primary">

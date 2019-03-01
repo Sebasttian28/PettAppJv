@@ -4,6 +4,10 @@
     Author     : KnokinGm
 --%>
 
+<%@page import="Modelo.Administrador.Funcionario.Funcionario"%>
+<%@page import="Modelo.Administrador.Funcionario.GSFuncionario"%>
+<%@page import="Modelo.Administrador.Ciudadano.GSCiudadanoAdmin"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -30,12 +34,21 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </body>
+
+        <%
+            HttpSession ht = request.getSession();
+            String datd=(String)ht.getAttribute("nomF");
+        %>
     <form action="../Seguimiento/Continuar_Postulacion.jsp">
     <input type="submit" name="volver" value="Volver" class="btn btn-outline-light" id="vol">
     </form>
+     
 <div id="padre">
+
 	<div id="insertar" class="form-group">
+        
 	<h1>Responder al Ciudadano</h1>
+   
  <form action="../../ServletRpositivo">
         <%
            int an;
@@ -43,14 +56,19 @@
            an=Integer.parseInt(request.getParameter("animal"));
            ced=request.getParameter("cedula");
         %>
- 	<label>Respuesta </label><input type="text" name="posres" required="" class="form-control">
-        <label>Encargado</label><input type='text' name='enca' required="" class="form_control">
-<input type="hidden" name="cedul" value="<%=ced%>" class="form-control">
+        <label>Respuesta </label><textarea type="text" name="posres" required="" class="form-control"></textarea>
+      
+        <input type='hidden' name='enca' required="" value="<%=datd%>" class="form_control">
+       
+        <input type="hidden" name="cedul" value="<%=ced%>" class="form-control">
 <input type="hidden" name="anim" value="<%=an%>" class="form-control">
       <div class="form-group" id="bot">
+          
       <input type="submit" name="posresp" value="Enviar Respuesta" class="btn btn-primary">
       </div>
+     
     </form>
+        
 </div>
 </div>
 

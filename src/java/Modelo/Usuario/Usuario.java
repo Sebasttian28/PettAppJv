@@ -22,7 +22,7 @@ public class Usuario {
             ps.setInt(3,ing.getRol());
             ps.setString(4,ing.getFot());
             ps.executeUpdate();
-            JOptionPane.showMessageDialog(null,"Usuario Ciudadano Ingresado Correctamente");
+            JOptionPane.showMessageDialog(null,"Usuario Ingresado Correctamente");
         
         
         }
@@ -48,10 +48,26 @@ public class Usuario {
             return R;
         }
     
-    public ArrayList<GSUsuario> ConsultarA(){
+    public ArrayList<GSUsuario> ConsultarA(String a){
         ArrayList<GSUsuario> R = new ArrayList<>();
         try {
-            ps=cnn.prepareStatement("Select * from login_usuarios where rol_login='1'");
+            ps=cnn.prepareStatement("Select * from login_usuarios where rol_login='1'  and nombre_usuario <> '"+a+"'");
+            res=ps.executeQuery();
+            while (res.next()) {
+                
+                GSUsuario CF = new GSUsuario(res.getString(1),res.getString(2),res.getInt(3),res.getString(4));
+                R.add(CF);
+                
+                
+            }
+            } catch (Exception e) {
+            }
+            return R;
+        }
+    public ArrayList<GSUsuario> ConsultarF(){
+        ArrayList<GSUsuario> R = new ArrayList<>();
+        try {
+            ps=cnn.prepareStatement("Select * from login_usuarios where rol_login='2'");
             res=ps.executeQuery();
             while (res.next()) {
                 

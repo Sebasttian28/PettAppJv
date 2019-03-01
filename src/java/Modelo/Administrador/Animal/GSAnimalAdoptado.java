@@ -15,32 +15,21 @@ public class GSAnimalAdoptado {
     private String tip;
     private String eda;
     private String raz;
+    private String fot;
     private String tam;
     private String gen;
     private String col;
-    private String fot;
 
-    public GSAnimalAdoptado(int cod, String nom, String tip, String eda, String raz, String tam, String gen, String col, String fot) {
+    public GSAnimalAdoptado(int cod, String nom, String tip, String eda, String raz, String fot, String tam, String gen, String col) {
         this.cod = cod;
         this.nom = nom;
         this.tip = tip;
         this.eda = eda;
         this.raz = raz;
+        this.fot = fot;
         this.tam = tam;
         this.gen = gen;
         this.col = col;
-        this.fot = fot;
-    }
-
-    public GSAnimalAdoptado(String nom, String tip, String eda, String raz, String tam, String gen, String col, String fot) {
-        this.nom = nom;
-        this.tip = tip;
-        this.eda = eda;
-        this.raz = raz;
-        this.tam = tam;
-        this.gen = gen;
-        this.col = col;
-        this.fot = fot;
     }
 
     public GSAnimalAdoptado(int cod, String nom, String tip, String eda, String raz, String tam, String gen, String col) {
@@ -54,9 +43,23 @@ public class GSAnimalAdoptado {
         this.col = col;
     }
 
+    public GSAnimalAdoptado(int cod) {
+        this.cod = cod;
+    }
+
+    public GSAnimalAdoptado(String nom, String tip, String eda, String raz, String fot, String tam, String gen, String col) {
+        this.nom = nom;
+        this.tip = tip;
+        this.eda = eda;
+        this.raz = raz;
+        this.fot = fot;
+        this.tam = tam;
+        this.gen = gen;
+        this.col = col;
+    }
+
     public GSAnimalAdoptado() {
     }
-    
 
     public int getCod() {
         return cod;
@@ -98,6 +101,14 @@ public class GSAnimalAdoptado {
         this.raz = raz;
     }
 
+    public String getFot() {
+        return fot;
+    }
+
+    public void setFot(String fot) {
+        this.fot = fot;
+    }
+
     public String getTam() {
         return tam;
     }
@@ -121,14 +132,8 @@ public class GSAnimalAdoptado {
     public void setCol(String col) {
         this.col = col;
     }
+    
 
-    public String getFot() {
-        return fot;
-    }
-
-    public void setFot(String fot) {
-        this.fot = fot;
-    }
     
     
 }

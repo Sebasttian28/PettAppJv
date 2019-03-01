@@ -153,13 +153,7 @@
                         <th><%=res2.getMen()%></th>
                         </tr>
                         <tr>
-                        <form method='POST' action=''>
-                    <input type='hidden' name='cod' value=''>
-                    <th><input type='submit' name='modificar' value='Modificar' class='btn btn-info' ></th>
-                </form>
-                <form action="">
-                    <th><input type="submit" name="eliminar" value="Eliminar" class="btn btn-danger"></th>
-                </form>  
+            
                     </table>
                 </div>
                 

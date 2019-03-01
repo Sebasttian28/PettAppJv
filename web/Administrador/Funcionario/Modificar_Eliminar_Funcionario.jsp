@@ -1,9 +1,3 @@
-<%-- 
-    Document   : Modificar_Eliminar_Funcionario
-    Created on : 23/11/2018, 08:48:47 AM
-    Author     : KnokinGm
---%>
-
 <%@page import="Modelo.Administrador.Funcionario.Funcionario"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Modelo.Administrador.Funcionario.GSFuncionario"%>
@@ -12,43 +6,39 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="CSS/EstiloModificar.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
         <title>Funcionario</title>
     </head>
-    <body>
+    <body id="fondox">
+        <form action="Consultar_Funcionarios.jsp">
+            <input type="submit" name="volver" value="Volver" class="btn btn-outline-light" id="vol">
+        </form>
+        <div id="padre">
+        <div id="modificar" class="form-group">
         <h1>Funcionario</h1>
-        <table>
-            <tr>
-                <th> Cedula </th>
-                <th> Telefono </th>
-                <th> Nombre </th>
-                <th> Correo </th>
-                <th> Clave </th>
-                <th> Rol </th>
-                
-            </tr>
-            <%
+        <%
+        String ced=request.getParameter("cod");
+        %>
+        <p>Cedula</p><p><%=ced%></p>
+        <%
             ArrayList<GSFuncionario> dat = new ArrayList<>();
                 Funcionario co = new Funcionario();
-                dat=co.Consultar();
+                dat=co.Consultar_f(ced);
                 GSFuncionario cgsc= new GSFuncionario();
                 for (int i = 0; i < dat.size() ; i++) {
                         cgsc=dat.get(i);
                         
             %>
-            <BR>
+        
             <form action="../../ServletFuncionario">
-            <tr>
-                <th><input type="text" name="cedula" size="20" value="<%=cgsc.getCedulafuncionario()%>" ></th>
-                <th><input type="text" name="telefono" size="20" value="<%=cgsc.getTelefonofuncionario()%>" ></th>
-                <th><input type="text" name="nombre" size="20" value="<%=cgsc.getNombrefuncionario()%>" ></th>
-                <th><input type="text" name="correo" size="20" value="<%=cgsc.getCorreofuncionario()%>"</th>
-                <th><input type="text" name="clave" size="20" value="<%=cgsc.getClavefuncionario()%>"</th>
-                <th><input type="text" name="rol" size="20" value="<%=cgsc.getRolfuncionario()%>"</th>
-                <th><input type="submit" name="botmodfun" size="10" value="Modificar"</th>
-                <th><input type="submit" name="botelifun" size="10" value="Eliminar"</th>
-            </tr>
+                <input type='hidden' value='<%=cgsc.getCed()%>' name="ced"> 
+                <p>Telefono<input type='text' value='<%=cgsc.getTel()%>' name="tel" class="form-control"></p> 
+                <p>Nombre<input type='text'  value='<%=cgsc.getNom()%>' name="nom" class="form-control"></p> 
+                <p>Correo<input type='text' value='<%=cgsc.getCor()%>' name="cor" class="form-control"></p> 
+                <p>Dependencia<input type='text' value='<%=cgsc.getDep()%>' name="dep" class="form-control"></p> 
+                <input type='submit' class='btn btn-info' value='Modificar' name="BTN">
             </form>
                 <%}%>
-            </table>
     </body>
 </html>

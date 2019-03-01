@@ -48,6 +48,9 @@ public class ServletModificarAdmin extends HttpServlet {
         if(request.getParameter("BTN") !=null){
                 this.Modificar(request, response);
         }
+        if(request.getParameter("BTNF") !=null){
+                this.ModificarF(request, response);
+        }
             
         
     }
@@ -70,7 +73,7 @@ public class ServletModificarAdmin extends HttpServlet {
             
           String nomfoto=fo.getSubmittedFileName();
           String nombre=nom;
-          String Url="C:\\Users\\Edwin Abril\\Documents\\NetBeansProjects\\PettAppJ\\web\\Uploads\\FotosUsuarios\\"+nombre;
+          String Url="C:\\Users\\crist_000\\Documents\\NetBeansProjects\\PettAppJ\\web\\Uploads\\FotosUsuarios\\"+nombre;
           String Url2=nombre;
           
           InputStream file=fo.getInputStream();
@@ -110,6 +113,63 @@ public class ServletModificarAdmin extends HttpServlet {
             
     }
     
+    protected void ModificarF(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+            PrintWriter out = response.getWriter();
+            
+            
+        String nom,cla,fotosi;
+        int x;
+        
+        nom=request.getParameter("usu");
+        cla=request.getParameter("clave");
+        fotosi=request.getParameter("fotosi");
+        Part fo= request.getPart("fo");
+        
+        if (fo!=null){
+            
+          String nomfoto=fo.getSubmittedFileName();
+          String nombre=nom;
+          String Url="C:\\Users\\crist_000\\Documents\\NetBeansProjects\\PettAppJ\\web\\Uploads\\FotosUsuarios\\"+nombre;
+          String Url2=nombre;
+          
+          InputStream file=fo.getInputStream();
+          File f=new File(Url);
+          FileOutputStream sal=new FileOutputStream(f);
+          int num=file.read();
+          while(num!= -1){
+              sal.write(num);
+              num=file.read();
+          }
+          
+            GSUsuario con2=new GSUsuario(nom,cla,Url2);
+            Usuario in2=new Usuario();
+            x=in2.Actualizar(con2);
+            
+            if(x>0){
+                JOptionPane.showMessageDialog(null, "Datos Actualizados");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Datos No Fueron Actualizados");
+            }
+        }
+        else{
+            
+            GSUsuario con2=new GSUsuario(nom,cla,fotosi);
+            Usuario in2=new Usuario();
+            x=in2.Actualizar(con2);
+            
+            if(x>0){
+                JOptionPane.showMessageDialog(null, "Datos Actualizados");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Datos No Fueron Actualizados");
+            }
+        }
+        response.sendRedirect("Administrador/Funcionario/Consultar_Funcionarios.jsp");
+            
+    }
     
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

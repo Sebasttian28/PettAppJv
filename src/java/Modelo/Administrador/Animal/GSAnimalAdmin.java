@@ -7,33 +7,10 @@ public class GSAnimalAdmin {
     private String tip;
     private String eda;
     private String raz;
+    private String fot;
     private String tam;
     private String gen;
     private String col;
-    private String fot;
-
-    public GSAnimalAdmin(int cod, String nom, String tip, String eda, String raz, String tam, String gen, String col, String fot) {
-        this.cod = cod;
-        this.nom = nom;
-        this.tip = tip;
-        this.eda = eda;
-        this.raz = raz;
-        this.tam = tam;
-        this.gen = gen;
-        this.col = col;
-        this.fot = fot;
-    }
-
-    public GSAnimalAdmin(String nom, String tip, String eda, String raz, String tam, String gen, String col, String fot) {
-        this.nom = nom;
-        this.tip = tip;
-        this.eda = eda;
-        this.raz = raz;
-        this.tam = tam;
-        this.gen = gen;
-        this.col = col;
-        this.fot = fot;
-    }
 
     public GSAnimalAdmin(int cod, String nom, String tip, String eda, String raz, String tam, String gen, String col) {
         this.cod = cod;
@@ -45,13 +22,35 @@ public class GSAnimalAdmin {
         this.gen = gen;
         this.col = col;
     }
-    
 
-    public GSAnimalAdmin() {
+    public GSAnimalAdmin(int cod, String nom, String tip, String eda, String raz, String fot, String tam, String gen, String col) {
+        this.cod = cod;
+        this.nom = nom;
+        this.tip = tip;
+        this.eda = eda;
+        this.raz = raz;
+        this.fot = fot;
+        this.tam = tam;
+        this.gen = gen;
+        this.col = col;
     }
 
     public GSAnimalAdmin(int cod) {
         this.cod = cod;
+    }
+
+    public GSAnimalAdmin() {
+    }
+
+    public GSAnimalAdmin(String nom, String tip, String eda, String raz, String fot, String tam, String gen, String col) {
+        this.nom = nom;
+        this.tip = tip;
+        this.eda = eda;
+        this.raz = raz;
+        this.fot = fot;
+        this.tam = tam;
+        this.gen = gen;
+        this.col = col;
     }
 
     public int getCod() {
@@ -94,6 +93,14 @@ public class GSAnimalAdmin {
         this.raz = raz;
     }
 
+    public String getFot() {
+        return fot;
+    }
+
+    public void setFot(String fot) {
+        this.fot = fot;
+    }
+
     public String getTam() {
         return tam;
     }
@@ -117,13 +124,8 @@ public class GSAnimalAdmin {
     public void setCol(String col) {
         this.col = col;
     }
+    
 
-    public String getFot() {
-        return fot;
-    }
-
-    public void setFot(String fot) {
-        this.fot = fot;
-    }
+    
     
 }

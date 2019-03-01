@@ -1,3 +1,4 @@
+<%@page import="javax.swing.JOptionPane"%>
 <%@page import="Modelo.Usuario.GSUsuario"%>
 <%@page import="Modelo.Usuario.Usuario"%>
 <%@page import="Modelo.Administrador.Admin.Admin"%>
@@ -18,7 +19,10 @@
         
 </head>
     <body>
-    
+        <%
+        HttpSession ht = request.getSession();
+        String dat2=(String)ht.getAttribute("nomA");
+        %>
         <form action="IngresarAdminAdmin.jsp">
             <input type="submit" name="nuevo" value="Insertar" class="btn btn-outline-dark" id="nuevo">
   	</form>
@@ -31,7 +35,7 @@
     	        <%
                 ArrayList<GSUsuario> dat = new ArrayList<>();
                 Usuario co = new Usuario();
-                dat=co.ConsultarA();
+                dat=co.ConsultarA(dat2);
                 GSUsuario cgsc= new GSUsuario();
                 for (int i = 0; i < dat.size() ; i++) {
                         cgsc=dat.get(i);

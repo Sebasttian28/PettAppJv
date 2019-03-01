@@ -5,28 +5,21 @@
  */
 package Controlador.Administra;
 
-import Modelo.Usuario.GSUsuario;
-import Modelo.Usuario.Usuario;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
+import javax.swing.JOptionPane;
 
 /**
  *
- * @author SENA
+ * @author Edwin Abril
  */
-@WebServlet(name = "ServletIngresoAdmin", urlPatterns = {"/ServletIngresoAdmin"})
-@MultipartConfig
-public class ServletIngresoAdmin extends HttpServlet {
+@WebServlet(name = "ServletFiltro", urlPatterns = {"/ServletFiltro"})
+public class ServletFiltro extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -40,49 +33,17 @@ public class ServletIngresoAdmin extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-            PrintWriter out = response.getWriter();
-            
-            if (request.getParameter("botonfunci")!=null) {
-            this.Ingresaradmin(request, response);
-        }
-    }
-
-    protected void Ingresaradmin(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
        PrintWriter out = response.getWriter();
        
-       String usu;
-        usu=request.getParameter("usu");
-         Part foto=request.getPart("foto");
-          String nomfoto=foto.getSubmittedFileName();
-          String nombre=usu;
-          
-          String Url="C:\\Users\\crist_000\\Documents\\NetBeansProjects\\PettAppJ\\web\\Uploads\\FotosUsuarios\\"+nombre;
-          
-          String Url2=nombre;
-          
-          InputStream file=foto.getInputStream();
-          File f=new File(Url);
-          FileOutputStream sal=new FileOutputStream(f);
-          int num=file.read();
-          while(num!= -1){
-              sal.write(num);
-              num=file.read();
-          }
-
-
-        
-        int rol = 1;
-        String cla = "admin";
-        GSUsuario con2=new GSUsuario(usu,cla,rol,Url2);
-        Usuario in2=new Usuario();
-        in2.Ingresar_ciud(con2);
-        response.sendRedirect("Administrador/Admin/IngresarAdminAdmin.jsp");
+       String r;
+       r=request.getParameter("nme");
+       
+       response.sendRedirect("Ciudadano/Animal/Consultar_Animal.jsp?raza="+r);
+       
        
        
     }
-    
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
