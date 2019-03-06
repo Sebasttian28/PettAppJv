@@ -7,19 +7,25 @@ package Controlador.Administra;
 
 import Modelo.Administrador.Evento.Evento;
 import Modelo.Administrador.Evento.GSEventoAdmin;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 /**
  *
  * @author SENA
  */
 @WebServlet(name = "ServletEvento", urlPatterns = {"/ServletEvento"})
+@MultipartConfig
 public class ServletEvento extends HttpServlet {
 
     /**
@@ -51,9 +57,26 @@ public class ServletEvento extends HttpServlet {
         lug=request.getParameter("lugar");
         dur=request.getParameter("hora");
         des=request.getParameter("desc");
+        Part foto=request.getPart("foto");
+        String nomfoto=foto.getSubmittedFileName();
+        String nombre=fec+"_"+lug;
+
+        String Url="C:\\Users\\Edwin Abril\\Documents\\NetBeansProjects\\PettAppJv\\web\\Uploads\\FotosEventos\\"+nombre;
+
+        String Url2=nombre;
+
+        InputStream file=foto.getInputStream();
+        File f=new File(Url);
+        FileOutputStream sal=new FileOutputStream(f);
+        int num=file.read();
+        while(num!= -1){
+            sal.write(num);
+            num=file.read();
+        }
 
 
-        GSEventoAdmin con=new GSEventoAdmin(0, fec, lug, dur, des);
+
+        GSEventoAdmin con=new GSEventoAdmin(fec, lug, dur, des, Url2);
         Evento in=new Evento();
         in.Ingresar_evento(con);
         response.sendRedirect("Administrador/Evento/Consultar_Evento.jsp");

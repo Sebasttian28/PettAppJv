@@ -1,3 +1,27 @@
+#myFooter{
+    background: #1e7000;
+    background: -moz-linear-gradient(left, #1e7000 0%, #6ab029 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #1e7000), color-stop(100%, #6ab029));
+    background: -webkit-linear-gradient(left, #1e7000 0%, #6ab029 100%);
+    background: -o-linear-gradient(left, #1e7000 0%, #6ab029 100%);
+    background: -ms-linear-gradient(left, #1e7000 0%, #6ab029 100%);
+    background: linear-gradient(to right, #1e7000 0%, #6ab029 100%);
+    
+}
+#alt{
+    height: 400px;
+    background: white;
+}
+#imgcir{
+    border-radius: 200px 200px 200px 200px;
+    -moz-border-radius: 200px 200px 200px 200px;
+    -webkit-border-radius: 200px 200px 200px 200px;
+    border: 0px solid #000000;
+}
+.img-responsive{
+	margin:10px;
+}
+
 *{
 	margin:0;
 	padding:0;
@@ -7,18 +31,27 @@
 }
 
 header{
-    margin-top: 50px;
-    width:100%;
-    height: 190px;
-    overflow:hidden;
-    background:green;
-
+	margin-top: 60px;
+	width:100%;
+	height: 190px;
+	overflow:hidden;
+    
+    background: #1e7000;
+    background: -moz-linear-gradient(left, #1e7000 0%, #6ab029 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #1e7000), color-stop(100%, #6ab029));
+    background: -webkit-linear-gradient(left, #1e7000 0%, #6ab029 100%);
+    background: -o-linear-gradient(left, #1e7000 0%, #6ab029 100%);
+    background: -ms-linear-gradient(left, #1e7000 0%, #6ab029 100%);
+    background: linear-gradient(to right, #1e7000 0%, #6ab029 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e7000', endColorstr='#6ab029', GradientType=1 );
 }
+
 .logotipo{
 	width:90%;
 	max-width:1200px;
 	margin: auto;
 }
+
 .logotipo h1{
 	font-family:'Rockwell';
 	font-weight: 400;
@@ -27,13 +60,17 @@ header{
 	font-size:60px;
 }
 
+#navegacion1{
+    width: auto;
+    padding: 12px;
+}
+
 .navegacion{
 	width: 100%;
 	background:green;
 	text-decoration: none;
-
-
 }
+
 .navegacion nav{
 	width: 90%;
 	max-width: 1200px;
@@ -41,16 +78,18 @@ header{
 	text-decoration: none;
         
 }
+
 .menu{
 	list-style: none;
 	width: 100%;
 
 }
+
 .menu li{
 	display: inline-block;
 
-
 }
+
 .menu li a{
 display: block;
 padding: 15px;
@@ -65,11 +104,12 @@ header .login{
 	line-height: 200px;
 	float:left; 
 	margin-left: 0px;
-
 }
+
 header nav{
 	float: right; 
 }
+
 header nav a{
 	display:inline-block;
 	color: white;
@@ -81,6 +121,7 @@ header nav a{
 	-o-transition:all 500ms ease;
 	transition:all  500ms ease;
 }
+
 header nav li{
 	display: inline-block;
 	padding: 10px 20px;
@@ -98,9 +139,8 @@ header nav s{
 	-webkit-transition:all 500ms ease;
 	-o-transition:all 500ms ease;
 	transition:all  500ms ease;
-
-
 }
+
 header nav a:hover{
 	background: #FFC300;
 	border-radius: 50px;
@@ -117,29 +157,29 @@ height: 550px;
 margin: auto;
 overflow: hidden;
 }
+
 .slider ul{
 	list-style: none;
 	display:flex;
 	padding:0;
 	width:400%;
 	animation: cambio 20s infinite alternate;
-
 }
+
 .slider s{
-    	width: 100%;
+    width: 100%;
 	list-style: none;
-        height: 50%;
-	
-
+    height: 50%;
 }
+
 .slider img{
 
 	width:100%;
 	height: 550px;
 }
+
 .boton-menu{
 	display: none;
-
 }
 
 .boton-menu  span{
@@ -147,8 +187,8 @@ color:white;
 font-size: 25px;
 cursor: pointer; 
 text-decoration: none;
-
 }
+
 header label{
 	display: none;
 	width: 30px;
@@ -156,6 +196,7 @@ header label{
 	padding: 10px;
 	border-right: 1px solid #fff;
 }
+
 header label:hover{
 	cursor: pointer;
 	background: rgba(0,0,0,0.3);
@@ -178,25 +219,82 @@ h1{
 .col-sm-4 col-xs-12 img{
     height:100%;
     width: 100%;
-    
 }
 
-#imagen{
+.imagen{
+    
 	position: relative;
+    
+    background: #1e7000;
+    background: -moz-linear-gradient(left, #1e7000 0%, #6ab029 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #1e7000), color-stop(100%, #6ab029));
+    background: -webkit-linear-gradient(left, #1e7000 0%, #6ab029 100%);
+    background: -o-linear-gradient(left, #1e7000 0%, #6ab029 100%);
+    background: -ms-linear-gradient(left, #1e7000 0%, #6ab029 100%);
+    background: linear-gradient(to right, #1e7000 0%, #6ab029 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e7000', endColorstr='#6ab029', GradientType=1 );
+
 }
 #imagen2{
 	position: relative;
-}
-#imagen3{
-	position: relative;
+    
+    background: #1e7000;
+    background: -moz-linear-gradient(left, #1e7000 0%, #6ab029 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #1e7000), color-stop(100%, #6ab029));
+    background: -webkit-linear-gradient(left, #1e7000 0%, #6ab029 100%);
+    background: -o-linear-gradient(left, #1e7000 0%, #6ab029 100%);
+    background: -ms-linear-gradient(left, #1e7000 0%, #6ab029 100%);
+    background: linear-gradient(to right, #1e7000 0%, #6ab029 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e7000', endColorstr='#6ab029', GradientType=1 );
+
 }
 
-#caja2{
+#imagen3{
+	position: relative;
+    
+    background: #1e7000;
+    background: -moz-linear-gradient(left, #1e7000 0%, #6ab029 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #1e7000), color-stop(100%, #6ab029));
+    background: -webkit-linear-gradient(left, #1e7000 0%, #6ab029 100%);
+    background: -o-linear-gradient(left, #1e7000 0%, #6ab029 100%);
+    background: -ms-linear-gradient(left, #1e7000 0%, #6ab029 100%);
+    background: linear-gradient(to right, #1e7000 0%, #6ab029 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e7000', endColorstr='#6ab029', GradientType=1 );
+
+}
+
+#panel{
+    border: solid 10px green ;
+    
+    background: #1e7000;
+    background: -moz-linear-gradient(left, #1e7000 0%, #6ab029 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #1e7000), color-stop(100%, #6ab029));
+    background: -webkit-linear-gradient(left, #1e7000 0%, #6ab029 100%);
+    background: -o-linear-gradient(left, #1e7000 0%, #6ab029 100%);
+    background: -ms-linear-gradient(left, #1e7000 0%, #6ab029 100%);
+    background: linear-gradient(to right, #1e7000 0%, #6ab029 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e7000', endColorstr='#6ab029', GradientType=1 );
+
+}
+
+#Adopcion{
+	margin-left: 45px;
+}
+
+.caja2{
     background-color: white; 
     width: auto;
     height:300px;
     padding: 15px;
     position: relative;
+}
+
+#imagenadopcion{
+	width: 350px;
+}
+
+#Veterinaria{
+	margin-left: 40px;
 }
 
 #caja4{
@@ -207,6 +305,14 @@ h1{
     position: relative;
 }
 
+#imagenveterinaria{
+	width: 420px;
+}
+
+#Eventos{
+	margin-left: 40px;
+}
+
 #caja6{
     background-color: white; 
     width: auto;
@@ -215,22 +321,28 @@ h1{
     position: relative;
 }
 
+#imageneventos{
+	width: 420px;
+}
 
 #info{
 	cursor: pointer;
-	margin-top:50px;
+	margin-top:20px;
+	margin-right:15px;
 	float: right;
 }
 
 #info2{
 	cursor: pointer;
-	margin-top:50px;
+	margin-right:15px;
+	margin-top:20px;
 	float: right;
 }
 
 #info3{
 	cursor: pointer;
-	margin-top:50px;
+	margin-right:15px;
+	margin-top:20px;
 	float: right;
 }
 
@@ -243,34 +355,32 @@ p{
         text-align:left;
 }
 
-
 #caja2{
     background-color: white; 
-    width: auto;
-    height: 310px;
+    width:auto;
+    height:300px;
     padding: 15px;
     position: relative;
-    font-size: 14px;
+    font-size: 16px;
+    border: 5px;   
 }
 
 #caja4{
     background-color: white; 
-    width: auto;
-    height: 310px;
+    width:auto;
+    height:300px;
     padding: 15px;
     position: relative;
-    font-size: 14px;
-    
+    font-size: 16px;
 }
 
 #caja6{
     background-color: white; 
-    width: auto;
-    height: 310px;
+    width:auto;
+    height:300px;
     padding: 15px;
     position: relative;
-    font-size: 14px;
-    
+    font-size: 16px;
 } 
 
 #contenedor1{
@@ -278,12 +388,33 @@ p{
 }
 
 .panel-heading{
-    background-color:green;
+    
+    background: #1e7000;
+    background: -moz-linear-gradient(left, #1e7000 0%, #6ab029 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #1e7000), color-stop(100%, #6ab029));
+    background: -webkit-linear-gradient(left, #1e7000 0%, #6ab029 100%);
+    background: -o-linear-gradient(left, #1e7000 0%, #6ab029 100%);
+    background: -ms-linear-gradient(left, #1e7000 0%, #6ab029 100%);
+    background: linear-gradient(to right, #1e7000 0%, #6ab029 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e7000', endColorstr='#6ab029', GradientType=1 );
 }
 
 #panel{
- background-color:green;
- color: white;
+    
+    border-radius: 10px 10px 0px 0px;
+    -moz-border-radius: 10px 10px 0px 0px;
+    -webkit-border-radius: 10px 10px 0px 0px;
+    border: 1px solid #a0d96a;
+    background: #1e7000;
+    background: -moz-linear-gradient(left, #1e7000 0%, #6ab029 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #1e7000), color-stop(100%, #6ab029));
+    background: -webkit-linear-gradient(left, #1e7000 0%, #6ab029 100%);
+    background: -o-linear-gradient(left, #1e7000 0%, #6ab029 100%);
+    background: -ms-linear-gradient(left, #1e7000 0%, #6ab029 100%);
+    background: linear-gradient(to right, #1e7000 0%, #6ab029 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e7000', endColorstr='#6ab029', GradientType=1 );
+
+     color: white;
 }
 
 .panel-body{
@@ -301,7 +432,18 @@ p{
     max-height:100%;
 }
 
-
+.footer-social{
+    
+background: #1e7000;
+background: -moz-linear-gradient(left, #1e7000 0%, #6ab029 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, #1e7000), color-stop(100%, #6ab029));
+background: -webkit-linear-gradient(left, #1e7000 0%, #6ab029 100%);
+background: -o-linear-gradient(left, #1e7000 0%, #6ab029 100%);
+background: -ms-linear-gradient(left, #1e7000 0%, #6ab029 100%);
+background: linear-gradient(to right, #1e7000 0%, #6ab029 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e7000', endColorstr='#6ab029', GradientType=1 );
+    
+}
 
 @keyframes cambio{
 	0%{margin-left:0;}
@@ -316,7 +458,110 @@ p{
 	75%{margin-left:-300%;}
 	100%{margin-left:-300%;}
 }
+
+
+
+@media screen and (max-width: 768px){
+
+.slider{
+width: 100%;
+height: 250px;
+margin: auto;
+overflow: hidden;
+}
+
+.slider img{
+
+	width:100%;
+	height: 250px;
+}
+
 @media screen and (max-width: 700px){
+
+.slider{
+width: 100%;
+height: 200px;
+margin: auto;
+overflow: hidden;
+}
+
+.slider img{
+
+	width:100%;
+	height: 200px;
+}
+
+#caja2{
+    background-color: white; 
+    width: auto;
+    height:270px;
+    padding: 15px;
+    position: relative;
+    font-size: 14px;
+}
+
+#imagenadopcion{
+	width: 320px;
+}
+
+#caja3{
+	margin-top: 50px;
+}
+
+#caja4{
+    background-color: white; 
+    width: auto;
+    height:270px;
+    padding: 15px;
+    position: relative;
+    font-size: 14px;
+    
+}
+
+#imagenveterinaria{
+	width: 320px;
+}
+
+#caja5{
+	margin-top: 50px;
+}
+
+#caja6{
+    background-color: white; 
+    width: auto;
+    height:320px;
+    padding: 15px;
+    position: relative;
+    font-size: 14px;
+}
+
+#imageneventos{
+	width: 320px;
+}
+
+}
+
+#caja5{
+	margin-top: 50px;
+}
+
+#caja6{
+    background-color: white; 
+    width: auto;
+    height:320px;
+    padding: 15px;
+    position: relative;
+    font-size: 14px;
+}
+
+#imageneventos{
+	width: 320px;
+}
+
+}
+
+@media screen and (max-width: 600px){
+
 .boton-menu{
 	width: 90%;
 	margin:auto;
@@ -325,31 +570,26 @@ p{
 	text-decoration: none;
 
 }
-.navegacion nav{
-	position: absolute;
-	width:100%;
-	height: 100%;
-	background:green;
-	left: -100%;
-	text-decoration: none;
-	text-align: center;
-	
-}
+
+
 .menu li{
 display: block;	
 text-decoration: none;
 }
+
 .slider s{
 	height:100%;
 }
+
 .logotipo h1{
 	font-family:'Rockwell';
 	font-weight: 400;
-	color:white;
+	color:white; 
 	padding:15px 0;
 	font-size:40px;
 	text-align: center;
 }
+
 .col-sm-4 col-xs-12{
     width: 100%;
     position: relative;
@@ -358,7 +598,7 @@ text-decoration: none;
 
 .slider{
 width: 100%;
-height: 280px;
+height: 220px;
 margin: auto;
 overflow: hidden;
 }
@@ -366,44 +606,13 @@ overflow: hidden;
 .slider img{
 
 	width:100%;
-	height: 280px;
+	height: 220px;
 }
-
 
 p{
-        text-align:left;
+  text-align:left;
+}
 }
 
-
-#caja2{
-    background-color: white; 
-    width: auto;
-    height:300px;
-    padding: 15px;
-    position: relative;
-    font-size: 14px;
-}
-
-#caja4{
-    background-color: white; 
-    width: auto;
-    height:300px;
-    padding: 15px;
-    position: relative;
-    font-size: 14px;
-    
-}
-
-#caja6{
-    background-color: white; 
-    width: auto;
-    height:300px;
-    padding: 15px;
-    position: relative;
-    font-size: 14px;
-    
-}
-
-}
 
 

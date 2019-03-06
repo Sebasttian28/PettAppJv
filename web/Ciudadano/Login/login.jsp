@@ -1,3 +1,5 @@
+<%@page import="Modelo.Administrador.Evento.GSEventoAdmin"%>
+<%@page import="Modelo.Administrador.Evento.Evento"%>
 <%@page import="javax.swing.JOptionPane"%>
 <%@page import="Modelo.Usuario.Usuario"%>
 <%@page import="Modelo.Usuario.GSUsuario"%>
@@ -8,7 +10,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,  user-scalabe=no, initial-scale=1.0, minimum-scale=1.0">
-	<link rel="stylesheet" href="css/estilos.css">
+	<link rel="stylesheet" href="Estilos.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/Footer-white.css">
         <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -135,64 +137,41 @@
 	<br>
 	<br>
 
-  <div class="row" id="modulos">
+  <div class="row" id="alt">
+        <%
+        ArrayList<GSEventoAdmin> datL = new ArrayList<>();
+        Evento coL = new Evento();
+        datL=coL.ConsultarL();
+        GSEventoAdmin cgscL= new GSEventoAdmin();
+        for (int i = 0; i < datL.size() ; i++) {
+                cgscL=datL.get(i);
+        %>
 
-  <div class="col-sm" id="caja1" >
-    <div class="panel panel-default text-center">
-        <div class="panel-heading" id="panel">
-        	<img src="Imagenes/info.png" height="30" width="30" id="info" > 
-          <h1 id="Adopcion">Adopción</h1>
-            <h5>Cómo Adopto?</h5>
+        
+          <div class="col">
+            <div class="panel panel-default text-center">
+              <div class="panel-heading" id="panel">
+                <img src="Imagenes/info.png" height="30" width="30" class="info">
+                  <h1 id="Adopcion"><%=cgscL.getFec()%></h1>
+                  <h5><%=cgscL.getLug()%></h5>
+              </div>
             </div>
-            <div id="caja2">
-            	<br>
-            	<p>En este módulo usted podrá dar hogar a un animal que lo necesita, La alcaldía municipal de Mosquera Cundinamarca, le ofrece la posibilidad de escoger el animal que usted quiera adoptar, y así contribuir de manera responsable a la salud ambiental y el desarrollo del municipio </p><br><br>
-            	<a href="Informacion/Adoptar.php">saber más</a>
-
+            <div class="caja1">
+              <br>
+                <p>Fecha: <%=cgscL.getFec()%></p>
+                <p>Lugar: <%=cgscL.getLug()%></p>
+                <p>Hora:  <%=cgscL.getDura()%></p>
+                <p>Descripcion:  <%=cgscL.getDesc()%></p>
+              <br><br><br>
             </div>
-          <div class="panel-body" id="imagen">
-          <!--  AQUI VA LA IMAGEN DEL EVENTO -->
-        <img src="Imagenes/adopcion.jpeg" class="img-responsive slideanim" id="imagenadopcion">
-     </div>
-    </div>      
-  </div>  
-      
-    <div class="col-sm" id="caja3">
-      <div class="panel panel-default text-center">
-          <div class="panel-heading" id="panel">
-          	<img src="Imagenes/info.png" height="30" width="30" id="info2" >
-          <h1 id="Veterinaria">Veterinarias</h1>
-           <h5>Veterinarias Vinculadas</h5>
-        </div>
-        <div id="caja4">
-        	<br>
-            	<p>En este módulo usted podrá ubicar las diferentes veterinarias del municipio que contribuyen al cuidado animal y a las cuales usted podrá acudir en caso de que su mascota requiera atención</p><br><br>
-            	<a href="Informacion/Eventos.php">saber más</a>
-        </div>
-        <div class="panel-body" id="imagen2">
-          <img src="Imagenes/veterinaria.jpeg" class="img-responsive slideanim" id="imagenveterinaria">
-        </div>
-      </div>      
-    </div>     
 
-    <div class="col-sm" id="caja5">
-      <div class="panel panel-default text-center">
-          <div class="panel-heading" id="panel">
-          	<img src="Imagenes/info.png" height="30" width="30" id="info3" >
-          <h1 id="Eventos">Eventos</h1>
-           <h5>Infórmate</h5>
-        </div>
-        <div id="caja6">
-           <br>
-            	<p>En este módulo usted podrá informarse acerca de las jornadas de cuidado animal que realiza el municipio, aquí podrá observar una descripción detallada además de la fecha, la hora y el lugar en el que se realizara</p><br><br>
-            	<a href="Informacion/Veterinaria.php">saber más</a>
-        </div>
-        <div class="panel-body" id="imagen3">
-          <img src="Imagenes/Jornadas.jpeg" class="img-responsive slideanim" id="imageneventos">
-        </div>
-      </div>      
-    </div>    
-  </div>
+            <div class="caja2">
+              <img src="../../Uploads/FotosEventos/<%=cgscL.getFoto()%>" class="img-responsive slideanim" id="imagenadopcion">
+            </div>
+          </div>
+
+        <%}%>
+</div>
 
 
     <footer id="myFooter">

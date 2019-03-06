@@ -26,7 +26,7 @@
             <input type="submit" name="volver" value="Volver" class="btn btn-outline-dark" id="vol">
   	</form>
         <form action="IngresarEvento_Adm.jsp">
-            <input type="submit" name="ing" value="Insertar" class="btn btn-outline-dark" id="vol">
+            <input type="submit" name="ing" value="Insertar" class="btn btn-outline-dark" id="nuevo">
   	</form>
 
     <h3 class="display-4">Eventos</h3>
@@ -51,6 +51,9 @@
                 
                 <div class="caja2">
                     <table class="table">
+                        <tr>
+                        <th colspan='2'><img src="../../Uploads/FotosEventos/<%=cgsc.getFoto()%>" width="200" height="200"></th>
+                        </tr>
                         <tr>
                         <th>Codigo</th>
                         <th><%=cgsc.getCod()%></th>

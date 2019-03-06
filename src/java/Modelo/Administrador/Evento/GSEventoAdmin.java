@@ -7,20 +7,23 @@ public class GSEventoAdmin {
     private String lug;
     private String dura;
     private String desc;
+    private String foto;
 
-    public GSEventoAdmin(int cod, String fec, String lug, String dura, String desc) {
+    public GSEventoAdmin(int cod, String fec, String lug, String dura, String desc, String foto) {
         this.cod = cod;
         this.fec = fec;
         this.lug = lug;
         this.dura = dura;
         this.desc = desc;
+        this.foto = foto;
     }
 
-    public GSEventoAdmin(String fec, String lug, String dura, String desc) {
+    public GSEventoAdmin(String fec, String lug, String dura, String desc, String foto) {
         this.fec = fec;
         this.lug = lug;
         this.dura = dura;
         this.desc = desc;
+        this.foto = foto;
     }
 
     public GSEventoAdmin() {
@@ -65,5 +68,14 @@ public class GSEventoAdmin {
     public void setDesc(String desc) {
         this.desc = desc;
     }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
+    }
+    
     
 }

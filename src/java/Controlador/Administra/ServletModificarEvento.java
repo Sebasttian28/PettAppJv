@@ -7,13 +7,18 @@ package Controlador.Administra;
 
 import Modelo.Administrador.Evento.Evento;
 import Modelo.Administrador.Evento.GSEventoAdmin;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,6 +26,7 @@ import javax.swing.JOptionPane;
  * @author Edwin Abril
  */
 @WebServlet(name = "ServletModificarEvento", urlPatterns = {"/ServletModificarEvento"})
+@MultipartConfig
 public class ServletModificarEvento extends HttpServlet {
 
     /**
@@ -37,28 +43,70 @@ public class ServletModificarEvento extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        String fec,lug,dur,des;
+        
+        if(request.getParameter("BTN") !=null){
+                this.Modificar(request, response);
+        }
+    }
+    
+    protected void Modificar(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+            PrintWriter out = response.getWriter();
+            
+        String fec,lug,dur,des,fotosi;
         int x,cod;
         
-        cod=Integer.parseInt(request.getParameter("cod3"));
-        fec=request.getParameter("fec3");
-        lug=request.getParameter("lug3");
-        dur=request.getParameter("dur3");
-        des=request.getParameter("des3");
+        cod=Integer.parseInt(request.getParameter("cod"));
+        fec=request.getParameter("fec");
+        lug=request.getParameter("lug");
+        dur=request.getParameter("dur");
+        des=request.getParameter("des");
+        fotosi=request.getParameter("fotosi");
+        Part fo= request.getPart("fo");
         
-        GSEventoAdmin gs = new GSEventoAdmin(cod, fec, lug, dur, des);
-        Evento ad = new Evento();
-        x=ad.Actualizar(gs);
-        
-        if (x>0) {
-            JOptionPane.showMessageDialog(null, "Datos Actualizados");
+        if (fo!=null){
+            
+          String nomfoto=fo.getSubmittedFileName();
+          String nombre=fec+"_"+lug;
+          String Url="C:\\Users\\Edwin Abril\\Documents\\NetBeansProjects\\PettAppJv\\web\\Uploads\\FotosEventos\\"+nombre;
+          String Url2=nombre;
+          
+          InputStream file=fo.getInputStream();
+          File f=new File(Url);
+          FileOutputStream sal=new FileOutputStream(f);
+          int num=file.read();
+          while(num!= -1){
+              sal.write(num);
+              num=file.read();
+          }
+          
+            GSEventoAdmin con2=new GSEventoAdmin(cod,fec,lug,dur,des,Url2);
+            Evento in2=new Evento();
+            x=in2.Actualizar(con2);
+            
+            if(x>0){
+                JOptionPane.showMessageDialog(null, "Datos Actualizados");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Datos No Fueron Actualizados");
+            }
         }
-        
         else{
-            JOptionPane.showMessageDialog(null, "Datos no Actualizados");
+            
+            GSEventoAdmin con2=new GSEventoAdmin(cod,fec,lug,dur,des,fotosi);
+            Evento in2=new Evento();
+            x=in2.Actualizar(con2);
+            
+            if(x>0){
+                JOptionPane.showMessageDialog(null, "Datos Actualizados");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Datos No Fueron Actualizados");
+            }
         }
         
-        request.getRequestDispatcher("Administrador/Evento/Modificar_Evento.jsp").forward(request, response);
+        response.sendRedirect("Administrador/Evento/Modificar_Evento.jsp");
     
     }
 
