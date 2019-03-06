@@ -9,7 +9,6 @@ import Modelo.Administrador.Adopcion.Adopcion;
 import Modelo.Administrador.Adopcion.GSAdoptado;
 import Modelo.Administrador.Animal.Animal;
 import Modelo.Administrador.Animal.GSAnimalAdmin;
-import Modelo.Administrador.Animal.GSAnimalAdoptado;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -73,7 +72,7 @@ public class ServletAnimal extends HttpServlet {
           String nomfoto=foto.getSubmittedFileName();
           String nombre=nomb+"_"+nomfoto;
           
-          String Url="C:\\Users\\crist_000\\Documents\\NetBeansProjects\\PettAppJ\\web\\Uploads\\FotosAnimal/"+nombre;
+          String Url="C:\\Users\\Edwin Abril\\Documents\\NetBeansProjects\\PettAppJv\\web\\Uploads\\FotosAnimal\\"+nombre;
           
           String Url2=nombre;
           
@@ -87,10 +86,10 @@ public class ServletAnimal extends HttpServlet {
           }
 
 
-        GSAnimalAdmin con=new GSAnimalAdmin(nomb,tip,ed,raz,tam,gen,col,Url2);
+        GSAnimalAdmin con=new GSAnimalAdmin(nomb,tip,ed,raz,Url2,tam,gen,col);
         Animal in=new Animal();
         in.Ingresar_animal(con);
-        GSAdoptado con2=new GSAdoptado(nomb,tip,ed,raz,tam,gen,col,Url2);
+        GSAdoptado con2=new GSAdoptado(nomb,tip,ed,raz,Url2,tam,gen,col);
         Adopcion in2=new Adopcion();
         in2.Guardar_Adoptado(con2);
         response.sendRedirect("Administrador/Animal/Consultar_Animal.jsp");
@@ -114,7 +113,7 @@ public class ServletAnimal extends HttpServlet {
           String nomfoto=foto.getSubmittedFileName();
           String nombre=nomb+"_"+nomfoto;
           
-          String Url="C:\\Users\\crist_000\\Documents\\NetBeansProjects\\PettAppJ\\web\\Uploads\\FotosAnimal/"+nombre;
+          String Url="C:\\Users\\Edwin Abril\\Documents\\NetBeansProjects\\PettAppJv\\web\\Uploads\\FotosAnimal\\"+nombre;
           
           String Url2=nombre;
           
@@ -128,10 +127,10 @@ public class ServletAnimal extends HttpServlet {
           }
 
 
-        GSAnimalAdmin con=new GSAnimalAdmin(nomb,tip,ed,raz,tam,gen,col,Url2);
+        GSAnimalAdmin con=new GSAnimalAdmin(nomb,tip,ed,raz,Url2,tam,gen,col);
         Animal in=new Animal();
         in.Ingresar_animal(con);
-        GSAdoptado con2=new GSAdoptado(nomb,tip,ed,raz,tam,gen,col,Url2);
+        GSAdoptado con2=new GSAdoptado(nomb,tip,ed,raz,Url2,tam,gen,col);
         Adopcion in2=new Adopcion();
         in2.Guardar_Adoptado(con2);
         response.sendRedirect("Funcionario/Animal/Consultar_Animal.jsp");
