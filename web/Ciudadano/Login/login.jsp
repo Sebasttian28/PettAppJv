@@ -95,7 +95,7 @@
                         }
                         %>
                             <div class="dropdown-divider">
-                        </div> <a class="dropdown-item" href="../../../Cerrar.php">Cerrar Sesion</a>
+                        </div> <a class="dropdown-item" href="../../Login/inicio.jsp">Cerrar Sesion</a>
                     </div>
                                 </li>
                             </ul>

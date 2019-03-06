@@ -99,7 +99,7 @@
                         }
                         %>
                             <div class="dropdown-divider">
-                        </div> <a class="dropdown-item" href="../../../Cerrar.php">Cerrar Sesion</a>
+                        </div> <a class="dropdown-item" href="../../Login/inicio.jsp">Cerrar Sesion</a>
                     </div>
 						
 						</li>
@@ -112,19 +112,7 @@
 	
     <h3 class="display-4" style="margin-top: 70px;">Animal</h3>
     
-        <input type="text" placeholder="Busqueda por Raza" name="xraza" class="razax">
-    <select name="xgenero">
-      <option value="">Genero</option>
-      <option value="Macho">Macho</option>
-      <option value="Hembra">Hembra</option>
-    </select>
-    <select name="xtamano">
-      <option value="">Tamaño</option>
-      <option value="Grande">Grande</option>
-      <option value="Mediano">Mediano</option>
-      <option value="Pequeño">Pequeño</option>
-    </select>
-    <input type="submit" name="buscar">
+        
     <div class="tabla">
     
         <%
@@ -155,7 +143,7 @@
                     <table class="table">
                         
                         <tr>
-                        <th><img src="../../Uploads/FotosAnimal/<%=gs.getFot()%>" width="100" height="100"></th>
+                        <th colspan="2"><img src="../../Uploads/FotosAnimal/<%=gs.getFot()%>" width="200" height="200"></th>
                         </tr>
                         <tr>
                         <th>Codigo</th>
@@ -190,8 +178,7 @@
                         </tr> 
                         
                         <form method='POST' action='../../ServletRespuesta'>
-                        <input type='submit' name='readop' heigth='100px' width='100px' src='Imagenes/adoptame.png' class='img-responsive slideanim' id='logoadopta'  >
-                        <h1>Adoptame</h1>
+                        <input type='submit' name='readop' class='btn btn-info' id='logoadopta' value="Adoptame" >
                         <input type='hidden' name='code' value='<%=gs.getCod()%>'>
                         
                         <%    
@@ -212,7 +199,7 @@
                         for (int ifin1 = 0; ifin1 < datfin1.size() ; ifin1++) {
                                 cgscfin1=datfin1.get(ifin1);
                         %>
-                        <input type='text' name='res1' value='<%=cgscfin1.getRe1()%>'>
+                        <input type='hidden' name='res1' value='<%=cgscfin1.getRe1()%>'>
                         
                         <%}%>
                         </form>

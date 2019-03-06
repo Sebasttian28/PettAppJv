@@ -16,7 +16,7 @@ public class Animal {
     
     public void Ingresar_animal(GSAnimalAdmin ing){
         try{
-            ps=cnn.prepareStatement("insert into animal (nombre_animal,tipo_animal,edad_animal,foto,raza_animal,tamano,genero,color) values(?,?,?,?,?,?,?,?)");
+            ps=cnn.prepareStatement("insert into animal (nombre_animal,tipo_animal,edad_animal,raza_animal,foto,tamano,genero,color) values(?,?,?,?,?,?,?,?)");
             ps.setString(1,ing.getNom());
             ps.setString(2,ing.getTip());
             ps.setString(3,ing.getEda());

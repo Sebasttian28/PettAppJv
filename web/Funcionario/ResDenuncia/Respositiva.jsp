@@ -22,14 +22,17 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <body id="fondox">
-
-
+    
+        <%
+            HttpSession ht = request.getSession();
+            String datd=(String)ht.getAttribute("nomF");
+        %>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="../Ciudadano/CSS/Estilo1.css">
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-</body>
+
     <form action="../Denuncia/Consultar_Denuncia.jsp">
     <input type="submit" name="volver" value="Volver" class="btn btn-outline-light" id="vol">
     </form>
@@ -43,9 +46,9 @@
          
            ced=request.getParameter("cedula");
         %>
- 	<label>Respuesta </label><input type="text" name="denres" required="" class="form-control">
+        <label>Respuesta </label><textarea type="text" name="denres" required="" class="form-control"></textarea>
 <input type="hidden" name="cedul" value="<%=ced%>" class="form-control">
-<input type="text" name="encargado" class="">
+<input type="hidden" name="encargado" class="" value="<%=datd%>">
 
       <div class="form-group" id="bot">
       <input type="submit" name="denresp" value="Enviar Respuesta" class="btn btn-primary">

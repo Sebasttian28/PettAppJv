@@ -17,7 +17,7 @@
 </head>
 <body>
 	<header id="encabezado">
-    <form action="../../../Login/Vista/registro.php">
+    <form action="../../Login/inicio.jsp">
     <input type="submit" name="cerrar" value="Cerrar Sesion" class="btn btn-light" id="sal">
     </form>
 

@@ -15,32 +15,35 @@ public class GSAdoptado {
     private String tip;
     private String eda;
     private String raz;
+    private String fot;
     private String tam;
     private String gen;
     private String col;
-    private String fot;
+    
 
-    public GSAdoptado(int cod, String nom, String tip, String eda, String raz, String tam, String gen, String col, String fot) {
+    public GSAdoptado(int cod, String nom, String tip, String eda, String raz, String fot, String tam, String gen, String col) {
         this.cod = cod;
         this.nom = nom;
         this.tip = tip;
         this.eda = eda;
         this.raz = raz;
+        this.fot = fot;
         this.tam = tam;
         this.gen = gen;
         this.col = col;
-        this.fot = fot;
+        
     }
 
-    public GSAdoptado(String nom, String tip, String eda, String raz, String tam, String gen, String col, String fot) {
+    public GSAdoptado(String nom, String tip, String eda, String raz, String fot, String tam, String gen, String col) {
         this.nom = nom;
         this.tip = tip;
         this.eda = eda;
         this.raz = raz;
+        this.fot = fot;
         this.tam = tam;
         this.gen = gen;
         this.col = col;
-        this.fot = fot;
+        
     }
 
     public GSAdoptado(int cod, String nom, String tip, String eda, String raz, String tam, String gen, String col) {
@@ -97,6 +100,14 @@ public class GSAdoptado {
         this.raz = raz;
     }
 
+    public String getFot() {
+        return fot;
+    }
+
+    public void setFot(String fot) {
+        this.fot = fot;
+    }
+    
     public String getTam() {
         return tam;
     }
@@ -121,13 +132,5 @@ public class GSAdoptado {
         this.col = col;
     }
 
-    public String getFot() {
-        return fot;
-    }
-
-    public void setFot(String fot) {
-        this.fot = fot;
-    }
-    
     
 }

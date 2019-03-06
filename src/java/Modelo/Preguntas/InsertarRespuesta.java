@@ -44,12 +44,11 @@ public class InsertarRespuesta {
         }
     }
     public void RespuestaFin(GSRespuestaFin ing){
-        JOptionPane.showMessageDialog(null, ing.getCed());
-        int Valor=0;
         try{
-        ps=cnn.prepareStatement("call preguntafin(?,?)");
+        ps=cnn.prepareStatement("insert into respuesta_pre values(?,?)");
         ps.setString(1,ing.getCed());
         ps.setInt(2,ing.getRe1());
+        ps.executeUpdate();
             JOptionPane.showMessageDialog(null,"Exito");
         }
         catch(Exception e){

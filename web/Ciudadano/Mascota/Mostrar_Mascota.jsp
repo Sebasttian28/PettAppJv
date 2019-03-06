@@ -150,36 +150,37 @@
                         </tr>
                         <tr>
                         <tr>
-                        <th>Descendencia</th>
+                        <th>Tipo</th>
                         <th><%=res2.getDes()%></th>
                         </tr>
                         <tr>
-                        <th>Estado</th>
+                        <th>Edad</th>
                         <th><%=res2.getEst()%></th>
                         </tr>
                         <tr>
-                        <th>Tipo</th>
+                        <th>Raza</th>
                         <th><%=res2.getTip()%></th>
                         </tr>
-                        <tr>
-                        <th>Edad</th>
-                        <th><%=res2.getEda()%></th>
+                        <th>Foto</th>
+                        <th><img src="../../Uploads/FotosAnimal/<%=res2.getEda()%>" width="200" height="200"></th>
                         </tr>
                         <tr>
-                        <th>Raza</th>
+                        <th>Tamaño</th>
                         <th><%=res2.getRaz()%></th>
                         </tr>
                         <tr>
-                        <th>Cedula</th>
+                        <th>Genero</th>
                         <th><%=res2.getCed()%></th>
                         </tr>
-                        <th>Foto</th>
-                        <th><img src="../<%=res2.getFot()%>" width="100" height="100"></th>
+                        <tr>
+                        <th>Color</th>
+                        <th><%=res2.getFot()%></th>
                         </tr>
+                        
                     
                 <form method='POST' action=''>
                     <input type='hidden' name='cod' value=''>
-                    <th><input type='submit' name='modificar' value='Modificar' class='btn btn-info' ></th>
+                    <th colspan="2"><input type='submit' name='modificar' value='Modificar' class='btn btn-info' ></th>
                 </form>
             
                 

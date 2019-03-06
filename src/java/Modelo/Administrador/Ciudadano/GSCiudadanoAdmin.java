@@ -16,7 +16,7 @@ public class GSCiudadanoAdmin {
         this.cor = cor;
         this.usu = usu;
     }
-
+    
     public GSCiudadanoAdmin(String ced) {
         this.ced = ced;
     }
