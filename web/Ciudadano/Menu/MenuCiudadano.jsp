@@ -122,7 +122,7 @@
           </div>
 
           <div class="col">
-                <form action="../Denuncias/Ingresar_Denuncia.jsp">
+                <form action="../Denuncias/Consultar_Denuncia.jsp">
                   <input type="image" name="denuncia" src="Logo/Denuncia.png" height="250" width="250" id="denuncia">
                 </form>
           </div>

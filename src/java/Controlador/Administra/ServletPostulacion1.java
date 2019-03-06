@@ -111,8 +111,8 @@ public class ServletPostulacion1 extends HttpServlet {
              
         String nomfoto=foto.getSubmittedFileName();
         String nombre=ced+"_"+nomfoto;
-        String Url="C:\\Users\\SENA\\Documents\\NetBeansProjects\\PettAppJ\\web\\Uploads\\Certificados"+nombre;
-        String Url2="Uploads/Certificados/"+nombre;
+        String Url="C:\\Users\\Edwin Abril\\Documents\\NetBeansProjects\\PettAppJv\\web\\Uploads\\Certificados\\"+nombre;
+        String Url2="Uploads\\Certificados\\"+nombre;
           
           InputStream file=foto.getInputStream();
           File f=new File(Url);
@@ -124,8 +124,8 @@ public class ServletPostulacion1 extends HttpServlet {
           }
           String nomfoto2=foto2.getSubmittedFileName();
           String nombre2=ced+"_"+nomfoto2;
-          String Url3="C:\\Users\\SENA\\Documents\\NetBeansProjects\\PettAppJ\\web\\Uploads\\FCedulas"+nombre2;
-          String Url4="Uploads/FCedulas/"+nombre2;
+          String Url3="C:\\Users\\Edwin Abril\\Documents\\NetBeansProjects\\PettAppJv\\web\\Uploads\\FCedulas\\"+nombre2;
+          String Url4="Uploads\\FCedulas\\"+nombre2;
           InputStream file2=foto2.getInputStream();
           File f2=new File(Url3);
           FileOutputStream sal2=new FileOutputStream(f2);
@@ -136,8 +136,8 @@ public class ServletPostulacion1 extends HttpServlet {
           }
           String nomfoto3=foto3.getSubmittedFileName();
           String nombre3=ced+"_"+nomfoto3;
-          String Url5="C:\\Users\\SENA\\Documents\\NetBeansProjects\\PettAppJ\\web\\Uploads\\Recibos"+nombre3;
-          String Url6="Uploads/Recibos/"+nombre3;
+          String Url5="C:\\Users\\Edwin Abril\\Documents\\NetBeansProjects\\PettAppJv\\web\\Uploads\\Recibos\\"+nombre3;
+          String Url6="Uploads\\Recibos\\"+nombre3;
           InputStream file3=foto3.getInputStream();
           File f3=new File(Url5);
           FileOutputStream sal3=new FileOutputStream(f3);

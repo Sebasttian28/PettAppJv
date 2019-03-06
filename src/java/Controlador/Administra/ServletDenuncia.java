@@ -66,7 +66,7 @@ public class ServletDenuncia extends HttpServlet {
           String nomfoto=foto.getSubmittedFileName();
           String nombre=fec+"_"+nomfoto;
           
-          String Url="C:\\Users\\crist_000\\Documents\\GitHub\\PettApp\\PettApp\\web\\Administrador\\FotosDenuncia\\"+nombre;
+          String Url="C:\\Users\\Edwin Abril\\Documents\\NetBeansProjects\\PettAppJv\\web\\Administrador\\FotosDenuncia\\"+nombre;
           
           String Url2="FotosDenuncia/"+nombre;
           
@@ -100,7 +100,7 @@ public class ServletDenuncia extends HttpServlet {
           String nomfoto=foto.getSubmittedFileName();
           String nombre=fec+"_"+nomfoto;
           
-          String Url="C:\\Users\\crist_000\\Documents\\NetBeansProjects\\PettAppJ\\web\\Uploads\\Denuncia\\"+nombre;
+          String Url="C:\\Users\\Edwin Abril\\Documents\\NetBeansProjects\\PettAppJv\\web\\Uploads\\Denuncia\\"+nombre;
           
           String Url2=nombre;
           

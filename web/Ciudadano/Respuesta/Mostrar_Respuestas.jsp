@@ -114,8 +114,6 @@
                 for (int i2 = 0; i2 < dat.size() ; i2++) {
                         cgsc2=dat.get(i2);
                 %>
-                
-                <%%>
         <form action="Menu/Ciudadano.jsp">
             <input type="submit" name="volver" value="Volver" class="btn btn-outline-dark" id="vol">
   	</form>

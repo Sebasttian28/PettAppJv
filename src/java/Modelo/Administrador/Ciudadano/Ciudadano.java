@@ -48,11 +48,11 @@ public class Ciudadano {
     public ArrayList<GSCiudadanoAdmin> Consultar1(String pr){
         ArrayList<GSCiudadanoAdmin> R = new ArrayList<>();
         try {
-            ps=cnn.prepareStatement("Select cedula from ciudadano where usuario_ciu='"+pr+"'");
+            ps=cnn.prepareStatement("Select * from ciudadano where usuario_ciu='"+pr+"'");
             res=ps.executeQuery();
             while (res.next()) {
                 
-                GSCiudadanoAdmin CF = new GSCiudadanoAdmin(res.getString(1));
+                GSCiudadanoAdmin CF = new GSCiudadanoAdmin(res.getString(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getString(6));
                 R.add(CF);
                 
                 

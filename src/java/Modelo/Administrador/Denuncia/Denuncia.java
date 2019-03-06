@@ -44,4 +44,18 @@ public class Denuncia {
         return R;
     }
     
+    public ArrayList<GSDenunciaAdmin> ConsultarD(String C){
+    ArrayList<GSDenunciaAdmin> R = new ArrayList<>();
+        try {
+            ps=cnn.prepareStatement("Select * from denuncia where cedul_ciudadano='"+C+"'");
+            res=ps.executeQuery();
+            while (res.next()) {
+                GSDenunciaAdmin CF = new GSDenunciaAdmin(res.getInt(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getString(6));
+                R.add(CF);
+            }
+        } catch (Exception e) {
+        }
+        return R;
+    }
+    
 }

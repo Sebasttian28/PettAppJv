@@ -73,7 +73,7 @@ public class ServletModificarAdmin extends HttpServlet {
             
           String nomfoto=fo.getSubmittedFileName();
           String nombre=nom;
-          String Url="C:\\Users\\crist_000\\Documents\\NetBeansProjects\\PettAppJ\\web\\Uploads\\FotosUsuarios\\"+nombre;
+          String Url="C:\\Users\\Edwin Abril\\Documents\\NetBeansProjects\\PettAppJv\\web\\Uploads\\FotosUsuarios\\"+nombre;
           String Url2=nombre;
           
           InputStream file=fo.getInputStream();
@@ -131,7 +131,7 @@ public class ServletModificarAdmin extends HttpServlet {
             
           String nomfoto=fo.getSubmittedFileName();
           String nombre=nom;
-          String Url="C:\\Users\\crist_000\\Documents\\NetBeansProjects\\PettAppJ\\web\\Uploads\\FotosUsuarios\\"+nombre;
+          String Url="C:\\Users\\Edwin Abril\\Documents\\NetBeansProjects\\PettAppJv\\web\\Uploads\\FotosUsuarios\\"+nombre;
           String Url2=nombre;
           
           InputStream file=fo.getInputStream();

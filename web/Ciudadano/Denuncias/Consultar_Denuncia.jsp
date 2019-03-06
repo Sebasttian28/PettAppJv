@@ -1,54 +1,57 @@
-<%@page import="Modelo.Administrador.Mascota.Mascota"%>
-<%@page import="Modelo.Administrador.Mascota.GSMascotaAdmin"%>
+<%-- 
+    Document   : Consultar_Denuncia
+    Created on : 23/11/2018, 08:35:33 AM
+    Author     : KnokinGm
+--%>
+
 <%@page import="Modelo.Administrador.Ciudadano.Ciudadano"%>
 <%@page import="Modelo.Administrador.Ciudadano.GSCiudadanoAdmin"%>
-<%@page import="Modelo.Usuario.Usuario"%>
 <%@page import="Modelo.Usuario.GSUsuario"%>
+<%@page import="Modelo.Usuario.Usuario"%>
+<%@page import="Modelo.Administrador.Denuncia.Denuncia"%>
+<%@page import="Modelo.Administrador.Denuncia.GSDenunciaAdmin"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
+    <head>
+       <title>Denuncia</title>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,  user-scalabe=no, initial-scale=1.0, minimum-scale=1.0">
-        <link rel="stylesheet" href="CSS/EstiloMascota.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="CSS/EstiloIngresoDenuncia.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   	<script src="JQ/jquery-3.3.1.min.js"></script>
-        <script src="JQ/main.js"></script>
-        <title>Pet App</title>
+        <script src="JQ/main1.js"></script>
+        
 </head>
     <body>
         
         <%
         HttpSession ht = request.getSession();
-        String dat2=(String)ht.getAttribute("nom1");
+        String dat1=(String)ht.getAttribute("nom");
         %>
         <%
-                ArrayList<GSUsuario> datc1 = new ArrayList<>();
-                Usuario co1 = new Usuario();
-                datc1=co1.Consultar1(dat2);
+                ArrayList<GSUsuario> dat = new ArrayList<>();
+                Usuario co = new Usuario();
+                dat=co.Consultar1(dat1);
                 GSUsuario cgsc= new GSUsuario();
-                for (int i = 0; i < datc1.size() ; i++) {
-                        cgsc=datc1.get(i);
+                for (int i = 0; i < dat.size() ; i++) {
+                        cgsc=dat.get(i);
                 %>
-                    <input type='hidden' class='usu' value='<%=cgsc.getNom()%>' name="usu4">
+                    
                 
             
         <div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-			<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark fixed-top">
-				 
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark fixed-top">
+               
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="navbar-toggler-icon"></span>
-                    </button> <a class="navbar-brand" href="../Login/login.jsp">PetApp</a>
+                    </button> <a class="navbar-brand" href="">PetApp</a>
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="navbar-nav ml-md-auto">
-                            <a class="navbar-brand" href="">Usuario: <%=dat2%></a>
+                            <a class="navbar-brand" href="">Usuario: <%=dat1%></a>
                                 <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown">
                                     <img src="../../Uploads/FotosUsuarios/<%=cgsc.getFot()%>" class="fotomod" 
@@ -66,7 +69,7 @@
                             <input type='hidden' name='usu2' value='<%=cgsc.getNom()%>'>
                             <input type="submit" class="dropdown-item" name="men" value="Menu"></a>
                         </form>
-                           
+                        <%}%>    
                         <%
                         if (request.getParameter("per")!=null){
                         HttpSession htt=request.getSession();
@@ -93,46 +96,49 @@
                             <div class="dropdown-divider">
                         </div> <a class="dropdown-item" href="../../Login/inicio.jsp">Cerrar Sesion</a>
                     </div>
-						
-						</li>
-					</ul>
-				</div>
-			</nav>
-		</div>
-	</div>
-</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div id="top">
+	<div id="ubi">
+       
+    
         
-                <%
-                ArrayList<GSCiudadanoAdmin> dat = new ArrayList<>();
-                Ciudadano co = new Ciudadano();
-                dat=co.Consultar1(dat2);
-                GSCiudadanoAdmin cgsc2= new GSCiudadanoAdmin();
+    
+        <form action="Ingresar_Denuncia.jsp">
+ 	<input type="submit" name="insertar" value="Realizar denuncia" class="btn btn-info" id="nuevo">
+	</form>
+    <h3 class="display-4">Denuncia</h3>
+    
+    <%
+                ArrayList<GSCiudadanoAdmin> datC = new ArrayList<>();
+                Ciudadano coC = new Ciudadano();
+                datC=coC.Consultar1(dat1);
+                GSCiudadanoAdmin cgscC= new GSCiudadanoAdmin();
                  
-                for (int i2 = 0; i2 < dat.size() ; i2++) {
-                        cgsc2=dat.get(i2);
+                for (int i2 = 0; i2 < datC.size() ; i2++) {
+                        cgscC=datC.get(i2);
                 %>
-                
-                <%%>
-        <form action="Menu/Ciudadano.jsp">
-            <input type="submit" name="volver" value="Volver" class="btn btn-outline-dark" id="vol">
-  	</form>
-         <form action="IngresarMascota_Adm.jsp">
-            <input type="submit" name="insertar" value="Insertar" class="btn btn-outline-dark" id="vol">
-  	</form>
-            <h3 class="display-4" style="margin-top: 50px;">Mascotas</h3>
+    
+    
     	        <%
-                ArrayList<GSMascotaAdmin> res = new ArrayList<>();
-                Mascota res1 = new Mascota();
-                res=res1.Consultar1(cgsc2.getCed());
-                GSMascotaAdmin res2= new GSMascotaAdmin();
-                for (int i3 = 0; i3 < res.size() ; i3++) {
-                        res2=res.get(i3);
+                ArrayList<GSDenunciaAdmin> dat12 = new ArrayList<>();
+                Denuncia co1 = new Denuncia();
+                dat12=co1.ConsultarD(cgscC.getCed());
+                GSDenunciaAdmin cgsc1= new GSDenunciaAdmin();
+                for (int i = 0; i < dat12.size() ; i++) {
+                        cgsc1=dat12.get(i);
                 %>
-            <div class="caja1">
+                <div id="centro">
+                <div class="caja1">
                     <table class="table">
                     <tr>
                     <thead class='thead-dark'>
-                    <th><%=res2.getNom()%></th>
+                    <th><%=cgsc1.getFec()%>-Cedula: <%=cgsc1.getCed()%></th>
                     </thead>
                     </tr>
                     </table>
@@ -142,54 +148,48 @@
                     <table class="table">
                         <tr>
                         <th>Codigo</th>
-                        <th><%=res2.getCod()%></th>
+                        <th><%=cgsc1.getCod()%></th>
                         </tr>
                         <tr>
-                        <th>Nombre</th>
-                        <th><%=res2.getNom()%></th>
+                        <th>Fecha</th>
+                        <th><%=cgsc1.getFec()%></th>
                         </tr>
                         <tr>
-                        <tr>
-                        <th>Tipo</th>
-                        <th><%=res2.getDes()%></th>
+                        <th>Descripcion</th>            
+                        <th><%=cgsc1.getDes()%></th>
                         </tr>
                         <tr>
-                        <th>Edad</th>
-                        <th><%=res2.getEst()%></th>
+                        <th>Cedula</th>
+                        <th><%=cgsc1.getCed()%></th>
                         </tr>
                         <tr>
-                        <th>Raza</th>
-                        <th><%=res2.getTip()%></th>
+                        <th>Mensaje</th>
+                        <th><%=cgsc1.getMen()%></th>
                         </tr>
+                        <tr>
                         <th>Foto</th>
-                        <th><img src="../../Uploads/FotosAnimal/<%=res2.getEda()%>" width="200" height="200"></th>
-                        </tr>
-                        <tr>
-                        <th>Tamaño</th>
-                        <th><%=res2.getRaz()%></th>
-                        </tr>
-                        <tr>
-                        <th>Genero</th>
-                        <th><%=res2.getCed()%></th>
-                        </tr>
-                        <tr>
-                        <th>Color</th>
-                        <th><%=res2.getFot()%></th>
+                        <th><img src="../<%=cgsc1.getFot()%>" width="100" height="100"></th>
                         </tr>
                         
-                    
-                <form method='POST' action=''>
-                    <input type='hidden' name='cod' value=''>
-                    <th colspan="2"><input type='submit' name='modificar' value='Modificar' class='btn btn-info' ></th>
+               <form method='POST' action='../ResDenuncia/Respositiva.jsp'>
+               <input type='hidden' name='cedula' value='<%=cgsc1.getCed()%>'>
+                    <th><input type='submit' name='acep' value='Aceptar' class='btn btn-info' ></th>
                 </form>
             
+                <form method='POST' action=''>
+              
+                    <th><input type='submit' name='eliminar' value='Rechazar' class='btn btn-danger'></th>
+                </form>
                 
                 
                 </table>
             </div>
             </div>
-            <%}}}%>                        
+            <%}}%>
+            
+            </div>
+            </div>
         
-        
-    </body>
+        </body>
 </html>
+
