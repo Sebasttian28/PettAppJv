@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Controlador;
 
 import Modelo.Administrador.Ciudadano.Ciudadano;
@@ -22,10 +17,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
-/**
- *
- * @author Edwin Abril
- */
 @WebServlet(name = "ServletRegistrarse", urlPatterns = {"/ServletRegistrarse"})
 @MultipartConfig
 public class ServletRegistrarse extends HttpServlet {
