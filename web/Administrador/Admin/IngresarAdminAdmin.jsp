@@ -31,7 +31,7 @@
         <form action="../../ServletIngresoAdmin" enctype="multipart/form-data" method="Post">
             <center><p class="lead">Insertar Administrador</p></center>
         <p>Usuario</br><input type="text" name="usu" size="30" class="form-control"></p>
-        <p>Foto</br><input type="file" name="foto" size="30"></p>
+        <p>Foto</br><input type="file" name="foto" size="30"  id="quitar"></p>
         <input type="submit" name="botonfunci" value="Guardar" class="btn btn-primary">
         </form>
         </div>

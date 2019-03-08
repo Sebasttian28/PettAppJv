@@ -68,7 +68,7 @@
                         </tr>
                         <tr>
                         <th>Foto</th>
-                        <th><img src="../<%=cgsc.getFot()%>" width="100" height="100"></th>
+                        <th><img src="../../Uploads/Denuncia/<%=cgsc.getFot()%>" width="100" height="100"></th>
                         </tr>
                         
                <form method='POST' action='../ResDenuncia/Respositiva.jsp'>

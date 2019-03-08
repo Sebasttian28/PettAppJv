@@ -126,7 +126,7 @@
                 <option value="Abandono">Abandono</option>
     </select>
         <input type="hidden" name="cedula" value='<%=cgsc1.getCed()%>' required="" class="form-control">
-    <label>Denuncia</label><input type="text" name="denuncia" required="" class="form-control">
+        <label>Denuncia</label><textarea type="text" name="denuncia" required="" class="form-control"></textarea>
     <label>Evidencia</label><br><input id="inp" type="file" name="IMG" >
       <div class="form-group" id="bot">
       <input type="submit" name="denunci" value="Realizar Denuncia" class="btn btn-primary">

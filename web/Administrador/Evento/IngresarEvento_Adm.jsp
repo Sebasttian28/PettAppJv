@@ -37,7 +37,7 @@
     <label>Lugar</label><input type="text" name="lugar" required="" class="form-control">
     <label>Hora</label><input type="time" name="hora" required="" class="form-control">
     <label>Descripcion</label><input type="text" name="desc" required="" class="form-control">
-    <p>Foto</br><input type="file" name="foto" size="30"></p>
+    <p>Foto</br><input type="file" name="foto" size="30" id="quitar"></p>
       <div class="form-group" id="bot">
       <input type="submit" name="indevent" value="Insertar Evento " class="btn btn-primary">
       </div>

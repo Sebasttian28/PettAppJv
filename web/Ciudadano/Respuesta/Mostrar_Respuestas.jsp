@@ -21,7 +21,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   	<script src="JQ/jquery-3.3.1.min.js"></script>
-        <script src="JQ/main1.js"></script>
+        <script src="JQ/main.js"></script>
         <title>Pet App</title>
 </head>
     <body>

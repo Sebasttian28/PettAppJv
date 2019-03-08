@@ -26,7 +26,7 @@
         <p>Nombre</br><input type="text" name="nombre" size="30" class="form-control"></p>
         <p>Correo</br><input type="text" name="correo" size="30" class="form-control"></p>
         <p>Dependencia</br><input type="text" name="dependencia" size="30" class="form-control"></p>
-        <p>Foto</br><input type="file" name="foto" size="30"></p>
+        <p>Foto</br><input type="file" name="foto" size="30" id="quitar"></p>
         <input type="submit" name="botonfunci" value="Guardar" class="btn btn-primary">
         </form>
         </div>
